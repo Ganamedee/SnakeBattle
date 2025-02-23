@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake Battle Arena</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="game-header">
+        <h1>Snake Battle Arena</h1>
+      </header>
+
+      <div class="game-container">
+        <div class="scoreboard">
+          <div class="score-card red">
+            <div class="score-icon">🔴</div>
+            <span id="scoreRed">Red: 1</span>
+          </div>
+          <div class="score-card blue">
+            <div class="score-icon">🔵</div>
+            <span id="scoreBlue">Blue: 1</span>
+          </div>
+        </div>
+
+        <canvas id="gameCanvas"></canvas>
+
+        <div class="controls-panel">
+          <div class="control-group">
+            <label for="fruitCountInput">Fruits</label>
+            <input type="number" id="fruitCountInput" min="1" value="1" />
+          </div>
+          <div class="control-group">
+            <label for="colsInput">Columns (max 53)</label>
+            <input
+              type="number"
+              id="colsInput"
+              min="10"
+              max="53"
+              value="30"
+              onchange="this.value = Math.min(53, Math.max(10, this.value))"
+            />
+          </div>
+          <div class="control-group">
+            <label for="rowsInput">Rows</label>
+            <input type="number" id="rowsInput" min="10" value="30" />
+          </div>
+          <div class="control-group">
+            <label for="speedInput">Speed (ms)</label>
+            <input type="number" id="speedInput" min="50" value="100" />
+          </div>
+          <div class="control-group">
+            <label for="redAlgorithm">Red Snake Algorithm</label>
+            <select id="redAlgorithm">
+              <option value="dijkstra" selected>Dijkstra's</option>
+              <option value="astar">A*</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="blueAlgorithm">Blue Snake Algorithm</label>
+            <select id="blueAlgorithm">
+              <option value="dijkstra" selected>Dijkstra's</option>
+              <option value="astar">A*</option>
+            </select>
+          </div>
+          <div class="button-group">
+            <button id="startBtn" class="btn primary">Start Game</button>
+            <button id="updateSettings" class="btn primary">Update</button>
+            <button id="restartBtn" class="btn secondary">Restart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

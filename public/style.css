@@ -1,0 +1,234 @@
+:root {
+  /* Dark theme colors */
+  --primary-color: #009ffd;
+  --secondary-color: #2a2a72;
+  --accent-color: #ff6b6b;
+  --background-color: #1a1a2e;
+  --text-color: #ffffff;
+  --card-background: #16213e;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --input-background: #0f3460;
+  --input-border: #1a1a2e;
+  --input-text: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+.start-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Update canvas styling */
+canvas {
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px var(--shadow-color);
+  background-color: #0f3460;
+  border: 2px solid var(--primary-color);
+}
+
+/* Update input styling for dark theme */
+input {
+  background-color: var(--input-background);
+  color: var(--input-text);
+  border: 2px solid var(--input-border);
+}
+
+.btn.secondary {
+  background: var(--input-background);
+  color: var(--input-text);
+}
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.theme-toggle {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.game-container {
+  background: var(--card-background);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.score-card {
+  display: flex;
+  width: 250px;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.score-card.red {
+  background: linear-gradient(45deg, #ff6b6b, #ff8787);
+  color: white;
+}
+
+.score-card.blue {
+  background: linear-gradient(45deg, #339af0, #74c0fc);
+  color: white;
+}
+
+.score-icon {
+  font-size: 1.5rem;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+.controls-panel {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  color: var(--text-color);
+}
+
+input {
+  padding: 0.8rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(0, 159, 253, 0.1);
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  grid-column: 1 / -1;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: var(--text-color);
+  font-weight: bold;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+}
+
+.btn.secondary {
+  background: #2a3f5f;
+  color: #ffffff;
+  border: 2px solid var(--primary-color);
+}
+.btn.secondary:hover {
+  background: #3a4f6f;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 159, 253, 0.3);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .game-container {
+    padding: 1rem;
+  }
+
+  .controls-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+select {
+  padding: 0.8rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--input-background);
+  color: var(--input-text);
+}
